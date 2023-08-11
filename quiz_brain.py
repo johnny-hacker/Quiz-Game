@@ -24,16 +24,19 @@ class QuizBrain:
         self.check_answer(user_answer, current_question.answer)
 
     def check_answer(self, u_answer, q_answer):
+        # if the user answer is the same as the question answer
+        # update score and let the user know if they were right or wrong
         if u_answer.lower() == q_answer.lower():
             self.score +=1
             print("correct!")
         else:
             print("sorry, that's incorrect :(")
-
+        # tell them what the correct answer was
         print(f"the correct answer was: {q_answer}")
+        # check the score
         self.check_score(self.score)
 
 
     def check_score(self, score):
-
+        # print the score
         return print(f"Your current score is {self.score}/{self.question_number}\n")
